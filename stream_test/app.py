@@ -9,9 +9,9 @@ def index():
     return render_template('index.html')
 
 def gen_frames():
-    rand_num = random.randint(1, 10) # toto potrebuju sdilet na server real-time
     cap = cv2.VideoCapture(0)
     while True:
+        rand_num = random.randint(1, 10) # toto potrebuju sdilet na server real-time
         success, frame = cap.read()
         if not success:
             break
