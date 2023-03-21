@@ -17,7 +17,7 @@ def gen_frames():
             break
         else:
             ret, buffer = cv2.imencode('.jpg', frame)
-            frame = buffer.tobytes() # a toto uz se sdili pres tuhle dalsi yield function, ktera pres video_feed posila primo na src obrazku v html
+            frame = buffer.tobytes() # a toto uz se sdili pres tuhle dalsi yield, ktera pres video_feed posila primo na src obrazku v html
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
